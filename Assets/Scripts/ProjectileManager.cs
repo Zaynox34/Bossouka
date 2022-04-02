@@ -5,7 +5,7 @@ using UnityEngine;
 public class ProjectileManager : MonoBehaviour
 {
     public Transform target;
-    [SerializeField] private bool isTargetByPlayer;
+    public bool isTargetByPlayer;
     [SerializeField] private float speed;
     [SerializeField] private float flair;
     [SerializeField] private Vector3 Direction;
@@ -13,7 +13,7 @@ public class ProjectileManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        speed = 10f;
+        speed = 14f;
         flairCadance = 0;
     }
 
@@ -21,6 +21,7 @@ public class ProjectileManager : MonoBehaviour
     void Update()
     {
         Pif();
+        
     }
     public void Pif()
     {
@@ -40,5 +41,9 @@ public class ProjectileManager : MonoBehaviour
         }
         Direction.Normalize();
         transform.position += Direction * Time.deltaTime * speed;
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        Destroy(this.gameObject);
     }
 }

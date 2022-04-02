@@ -35,6 +35,51 @@ public partial class @PlayerControl : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""North"",
+                    ""type"": ""Button"",
+                    ""id"": ""f5107728-7581-42f2-a18c-53949711aadc"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""East"",
+                    ""type"": ""Button"",
+                    ""id"": ""6713e194-f5d1-4cec-a5c3-a02ebb3c6d9e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""South"",
+                    ""type"": ""Button"",
+                    ""id"": ""69b577a1-ef4a-4c38-84d3-3d9868dbbe9b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""West"",
+                    ""type"": ""Button"",
+                    ""id"": ""0847277b-ee4b-4da8-ac91-bff228348818"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Gatotsu"",
+                    ""type"": ""Button"",
+                    ""id"": ""abf7e359-9c4c-45ea-8654-1043d831b2e8"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -92,6 +137,61 @@ public partial class @PlayerControl : IInputActionCollection2, IDisposable
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""00b07fae-5825-42b2-b4c0-c4ed28d408b4"",
+                    ""path"": ""<Keyboard>/numpad8"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""North"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a6f1a521-d275-45b4-a311-1cc0ad30751d"",
+                    ""path"": ""<Keyboard>/numpad4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""East"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2d36ca0f-405b-43e2-9ff0-d34b7cc46442"",
+                    ""path"": ""<Keyboard>/numpad2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""South"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2b0d9b76-191e-40f1-8d7a-6ab7eedc061e"",
+                    ""path"": ""<Keyboard>/numpad4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""West"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ea08049c-1be9-4b6e-aa39-cac6013c8d04"",
+                    ""path"": ""<Keyboard>/numpad5"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Gatotsu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -101,6 +201,11 @@ public partial class @PlayerControl : IInputActionCollection2, IDisposable
         // BaseControl
         m_BaseControl = asset.FindActionMap("BaseControl", throwIfNotFound: true);
         m_BaseControl_Move = m_BaseControl.FindAction("Move", throwIfNotFound: true);
+        m_BaseControl_North = m_BaseControl.FindAction("North", throwIfNotFound: true);
+        m_BaseControl_East = m_BaseControl.FindAction("East", throwIfNotFound: true);
+        m_BaseControl_South = m_BaseControl.FindAction("South", throwIfNotFound: true);
+        m_BaseControl_West = m_BaseControl.FindAction("West", throwIfNotFound: true);
+        m_BaseControl_Gatotsu = m_BaseControl.FindAction("Gatotsu", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -161,11 +266,21 @@ public partial class @PlayerControl : IInputActionCollection2, IDisposable
     private readonly InputActionMap m_BaseControl;
     private IBaseControlActions m_BaseControlActionsCallbackInterface;
     private readonly InputAction m_BaseControl_Move;
+    private readonly InputAction m_BaseControl_North;
+    private readonly InputAction m_BaseControl_East;
+    private readonly InputAction m_BaseControl_South;
+    private readonly InputAction m_BaseControl_West;
+    private readonly InputAction m_BaseControl_Gatotsu;
     public struct BaseControlActions
     {
         private @PlayerControl m_Wrapper;
         public BaseControlActions(@PlayerControl wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_BaseControl_Move;
+        public InputAction @North => m_Wrapper.m_BaseControl_North;
+        public InputAction @East => m_Wrapper.m_BaseControl_East;
+        public InputAction @South => m_Wrapper.m_BaseControl_South;
+        public InputAction @West => m_Wrapper.m_BaseControl_West;
+        public InputAction @Gatotsu => m_Wrapper.m_BaseControl_Gatotsu;
         public InputActionMap Get() { return m_Wrapper.m_BaseControl; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -178,6 +293,21 @@ public partial class @PlayerControl : IInputActionCollection2, IDisposable
                 @Move.started -= m_Wrapper.m_BaseControlActionsCallbackInterface.OnMove;
                 @Move.performed -= m_Wrapper.m_BaseControlActionsCallbackInterface.OnMove;
                 @Move.canceled -= m_Wrapper.m_BaseControlActionsCallbackInterface.OnMove;
+                @North.started -= m_Wrapper.m_BaseControlActionsCallbackInterface.OnNorth;
+                @North.performed -= m_Wrapper.m_BaseControlActionsCallbackInterface.OnNorth;
+                @North.canceled -= m_Wrapper.m_BaseControlActionsCallbackInterface.OnNorth;
+                @East.started -= m_Wrapper.m_BaseControlActionsCallbackInterface.OnEast;
+                @East.performed -= m_Wrapper.m_BaseControlActionsCallbackInterface.OnEast;
+                @East.canceled -= m_Wrapper.m_BaseControlActionsCallbackInterface.OnEast;
+                @South.started -= m_Wrapper.m_BaseControlActionsCallbackInterface.OnSouth;
+                @South.performed -= m_Wrapper.m_BaseControlActionsCallbackInterface.OnSouth;
+                @South.canceled -= m_Wrapper.m_BaseControlActionsCallbackInterface.OnSouth;
+                @West.started -= m_Wrapper.m_BaseControlActionsCallbackInterface.OnWest;
+                @West.performed -= m_Wrapper.m_BaseControlActionsCallbackInterface.OnWest;
+                @West.canceled -= m_Wrapper.m_BaseControlActionsCallbackInterface.OnWest;
+                @Gatotsu.started -= m_Wrapper.m_BaseControlActionsCallbackInterface.OnGatotsu;
+                @Gatotsu.performed -= m_Wrapper.m_BaseControlActionsCallbackInterface.OnGatotsu;
+                @Gatotsu.canceled -= m_Wrapper.m_BaseControlActionsCallbackInterface.OnGatotsu;
             }
             m_Wrapper.m_BaseControlActionsCallbackInterface = instance;
             if (instance != null)
@@ -185,6 +315,21 @@ public partial class @PlayerControl : IInputActionCollection2, IDisposable
                 @Move.started += instance.OnMove;
                 @Move.performed += instance.OnMove;
                 @Move.canceled += instance.OnMove;
+                @North.started += instance.OnNorth;
+                @North.performed += instance.OnNorth;
+                @North.canceled += instance.OnNorth;
+                @East.started += instance.OnEast;
+                @East.performed += instance.OnEast;
+                @East.canceled += instance.OnEast;
+                @South.started += instance.OnSouth;
+                @South.performed += instance.OnSouth;
+                @South.canceled += instance.OnSouth;
+                @West.started += instance.OnWest;
+                @West.performed += instance.OnWest;
+                @West.canceled += instance.OnWest;
+                @Gatotsu.started += instance.OnGatotsu;
+                @Gatotsu.performed += instance.OnGatotsu;
+                @Gatotsu.canceled += instance.OnGatotsu;
             }
         }
     }
@@ -192,5 +337,10 @@ public partial class @PlayerControl : IInputActionCollection2, IDisposable
     public interface IBaseControlActions
     {
         void OnMove(InputAction.CallbackContext context);
+        void OnNorth(InputAction.CallbackContext context);
+        void OnEast(InputAction.CallbackContext context);
+        void OnSouth(InputAction.CallbackContext context);
+        void OnWest(InputAction.CallbackContext context);
+        void OnGatotsu(InputAction.CallbackContext context);
     }
 }
