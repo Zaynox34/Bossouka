@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class HeadBossManager : MonoBehaviour
 {
+    [SerializeField] private GameObject projectileGroup;
     [SerializeField] private float cadance;
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject prefabProjectile;
@@ -17,13 +18,17 @@ public class HeadBossManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(counterCadance>=cadance)
+        Fire();
+    }
+    public void Fire()
+    {
+        if (counterCadance >= cadance)
         {
             counterCadance = 0;
-            GameObject tmp =Instantiate(prefabProjectile,transform.position,Quaternion.identity);
+            GameObject tmp = Instantiate(prefabProjectile, transform.position, Quaternion.identity);
+            tmp.transform.parent = projectileGroup.transform;
             tmp.GetComponent<ProjectileManager>().target = player.transform;
         }
         counterCadance += Time.deltaTime;
-
     }
 }

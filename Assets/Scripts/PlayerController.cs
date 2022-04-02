@@ -36,9 +36,6 @@ public class PlayerController : MonoBehaviour
         {
             centerPivotTransform.Rotate(new Vector3(0, -move.x, 0) * Time.deltaTime * speed);
             transform.position += new Vector3(0, 0, move.y) * Time.deltaTime * speed /Mathf.PI;
-
-
-            //transform.position += new Vector3(move.x,0, move.y) *Time.deltaTime*speed;
         }
     }
 }

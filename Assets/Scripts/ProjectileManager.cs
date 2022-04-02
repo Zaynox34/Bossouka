@@ -5,6 +5,7 @@ using UnityEngine;
 public class ProjectileManager : MonoBehaviour
 {
     public Transform target;
+    [SerializeField] private bool isTargetByPlayer;
     [SerializeField] private float speed;
     [SerializeField] private float flair;
     [SerializeField] private Vector3 Direction;
@@ -19,7 +20,10 @@ public class ProjectileManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Pif();
+    }
+    public void Pif()
+    {
         if (flairCadance >= flair)
         {
             flairCadance = -1;
@@ -36,6 +40,5 @@ public class ProjectileManager : MonoBehaviour
         }
         Direction.Normalize();
         transform.position += Direction * Time.deltaTime * speed;
-
     }
 }
