@@ -545,6 +545,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &271941817
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 271941818}
+  m_Layer: 0
+  m_Name: ProjectileTargetGroup
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &271941818
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 271941817}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &516276679
 GameObject:
   m_ObjectHideFlags: 3
@@ -712,7 +742,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &705691226
 GameObject:
@@ -855,7 +885,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 753284641}
-  m_LocalRotation: {x: 1.5873398e-10, y: 0.99910253, z: 0.042358074, w: -0.0000000037440673}
+  m_LocalRotation: {x: 1.5873387e-10, y: 0.99910253, z: 0.042358074, w: -0.0000000037440637}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -911,6 +941,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CameraTransform: {fileID: 1160309937}
   prefabTarget: {fileID: 863312236942935550, guid: 1960a3b6c3be6a04db070025c93782db, type: 3}
+  projectileGroup: {fileID: 1672265931}
+  projectileTargetGroup: {fileID: 271941817}
 --- !u!23 &775181478
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2027,8 +2059,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   centerPivotTransform: {fileID: 254039763}
-  projectileGroup: {fileID: 0}
+  projectileTargetGroup: {fileID: 271941817}
   speed: 0
+  target: {fileID: 0}
+  rythmOffsetError: 0.3
+  rythmContainer: 
+  maxrythm: 3
+  numberofrythm: 0
+  rythmTimming: []
+  timeInput: 0
+  startTimeInput: 0
+  rythmTimmingAverage: []
 --- !u!82 &1491434295
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2638,9 +2679,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileGroup: {fileID: 1672265931}
-  cadance: 1
+  cadance: 10
   player: {fileID: 1491434289}
   prefabProjectile: {fileID: 984199585054130908, guid: 8ffe17e31b56cba4ebfe4e637fc53253, type: 3}
+  rythmContainer: 020000000600000002000000
+  rythmTiming:
+  - 0
+  - 0.25
+  - 0.66
+  koeCounter: 0
+  koeTimer: 0
+  counterCadance: 0
 --- !u!65 &1533931143
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2842,7 +2891,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1672265931}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.510231, y: 5.6509457, z: 18.114742}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

@@ -6,6 +6,8 @@ public class ReversManager : MonoBehaviour
 {
     [SerializeField] private Transform CameraTransform;
     [SerializeField] private GameObject prefabTarget;
+    [SerializeField] private GameObject projectileGroup;
+    [SerializeField] private GameObject projectileTargetGroup;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,14 +21,16 @@ public class ReversManager : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        other.GetComponent<ProjectileManager>().isTargetByPlayer = true;
-        GameObject tmp =Instantiate(prefabTarget,other.transform);
-        tmp.GetComponent<TargetManager>().CameraTransform = this.CameraTransform;
-
+            //other.GetComponent<ProjectileManager>().isTargetByPlayer = true;
+            other.transform.parent = projectileTargetGroup.transform;
+            GameObject tmp = Instantiate(prefabTarget, other.transform);
+            tmp.GetComponent<TargetManager>().CameraTransform = this.CameraTransform;
     }
     private void OnTriggerExit(Collider other)
     {
-        other.GetComponent<ProjectileManager>().isTargetByPlayer = false;
-        other.transform.GetChild(0).GetComponent<MeshRenderer>().enabled = false;
+            //other.GetComponent<ProjectileManager>().isTargetByPlayer = false;
+            other.transform.parent = projectileGroup.transform;
+            other.transform.GetChild(0).GetComponent<MeshRenderer>().enabled = false;      
     }
+
 }

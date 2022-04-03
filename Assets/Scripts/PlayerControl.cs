@@ -152,7 +152,7 @@ public partial class @PlayerControl : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""a6f1a521-d275-45b4-a311-1cc0ad30751d"",
-                    ""path"": ""<Keyboard>/numpad4"",
+                    ""path"": ""<Keyboard>/numpad6"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -174,7 +174,7 @@ public partial class @PlayerControl : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""2b0d9b76-191e-40f1-8d7a-6ab7eedc061e"",
-                    ""path"": ""<Keyboard>/numpad6"",
+                    ""path"": ""<Keyboard>/numpad4"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
