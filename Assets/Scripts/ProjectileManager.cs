@@ -8,7 +8,7 @@ public class ProjectileManager : MonoBehaviour
     public GameObject father;
     public bool isTargetByPlayer;
     public bool revers;
-    [SerializeField] private float speed;
+    public float speed;
     [SerializeField] private float flair;
     [SerializeField] private Vector3 Direction;
     [SerializeField]  private float flairCadance;

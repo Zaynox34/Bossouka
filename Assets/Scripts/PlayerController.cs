@@ -190,6 +190,7 @@ public class PlayerController : MonoBehaviour
                             timeInput = 0;
                             rythmContainer = new List<int>() { };
                             rythmTimming = new List<float>() { };
+                            Repel();
                             Debug.Log("yes");
 
                         }
@@ -211,6 +212,17 @@ public class PlayerController : MonoBehaviour
                 {
                     timeInput += Time.deltaTime;
                 }
+            }
+        }
+    }
+    public void Repel()
+    {
+        for (int i = 0; i < projectileTargetGroup.transform.childCount; i++)
+        {
+            if (projectileTargetGroup.transform.GetChild(i).GetComponent<ProjectileManager>().father=target)
+            {
+                projectileTargetGroup.transform.GetChild(i).GetComponent<ProjectileManager>().revers=true;
+                projectileTargetGroup.transform.GetChild(i).GetComponent<ProjectileManager>().speed *= 2;
             }
         }
     }
