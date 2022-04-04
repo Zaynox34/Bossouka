@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
     
     public void Move()
     {
-        transform.forward = transform.position.normalized;
+        transform.forward = new Vector3(transform.position.x, 0, transform.position.z).normalized; 
         Vector2 move = playerControl.BaseControl.Move.ReadValue<Vector2>();
         if (move != Vector2.zero)
         {
