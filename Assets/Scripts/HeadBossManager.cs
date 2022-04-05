@@ -13,6 +13,8 @@ public class HeadBossManager : MonoBehaviour
     [SerializeField] private int koeCounter;
     [SerializeField] private float koeTimer;
     [SerializeField] private float counterCadance;
+    [SerializeField] GameObject neck;
+    [SerializeField] GameObject headController;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +36,8 @@ public class HeadBossManager : MonoBehaviour
     void Update()
     {
         Hibike();
+        transform.position=neck.GetComponent<LineRenderer>().GetPosition(neck.GetComponent<LineRenderer>().positionCount-1);
+        transform.rotation = headController.transform.rotation;
     }
     public void Fire()
     {

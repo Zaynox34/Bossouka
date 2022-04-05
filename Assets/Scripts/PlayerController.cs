@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         playerControl = new PlayerControl();
+        Application.targetFrameRate = 60;
     }
 
     private void OnEnable()
