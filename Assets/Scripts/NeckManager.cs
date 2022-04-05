@@ -45,4 +45,27 @@ public class NeckManager : MonoBehaviour
     {
 
     }
+    public int Fact(int n)
+    {
+        if(n==0)
+        {
+            return 1;
+        }
+        int res = 1;
+        for(int i=1;i<=n;i++)
+        {
+            n *= i;
+        }
+        return res;
+    }
+    public static Vector3 BézierInterpolationFour(Vector3 P0, Vector3 P1, Vector3 P2, Vector3 P3, Vector3 P4, float t)
+    {
+        //Merci Léo
+        t = Mathf.Clamp(t, 0, 1);
+        Mathf.fac
+        //float value = (1 - t) * (1 - t) * (1 - t) * a + 3 * (1 - t) * (1 - t) * t * b + 1 * (1 - t) * (t) * (t) * c + t * t * t * d;
+      for
+
+        return value;
+    }
 }
