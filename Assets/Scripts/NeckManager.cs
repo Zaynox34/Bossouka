@@ -12,8 +12,13 @@ public class NeckManager : MonoBehaviour
     [SerializeField] GameObject point2;
     [SerializeField] GameObject point3;
     [SerializeField] float offset;
+    [SerializeField] int subdivision;
+    public float thickness;
     void Start()
     {
+        GetComponent<LineRenderer>().startWidth = thickness;
+        GetComponent<LineRenderer>().endWidth = thickness;
+        GetComponent<LineRenderer>().positionCount = subdivision;
         bezierPoint.Add(origin.position);
 
         for (int i = 1; i < 5; i++)
@@ -43,7 +48,11 @@ public class NeckManager : MonoBehaviour
     }
     public void TracerBezierCourbe()
     {
-
+        for(int i=0;i<subdivision;i++)
+        {
+            
+            GetComponent<LineRenderer>().SetPosition(i, PolynBernstein((float)1 / (float)subdivision) * i);
+        }
     }
     public int Fact(int n)
     {
@@ -51,21 +60,28 @@ public class NeckManager : MonoBehaviour
         {
             return 1;
         }
-        int res = 1;
+        int pi = 1;
         for(int i=1;i<=n;i++)
         {
             n *= i;
         }
-        return res;
+        return pi;
     }
-    public static Vector3 BézierInterpolationFour(Vector3 P0, Vector3 P1, Vector3 P2, Vector3 P3, Vector3 P4, float t)
+    public float CoefBinomial(int n,int k)
     {
-        //Merci Léo
+        return Fact(n) / (Fact(k) * Fact(n - k));
+    }
+    public Vector3 PolynBernstein(float t)
+    {
+        int n= 4;
         t = Mathf.Clamp(t, 0, 1);
-        Mathf.fac
-        //float value = (1 - t) * (1 - t) * (1 - t) * a + 3 * (1 - t) * (1 - t) * t * b + 1 * (1 - t) * (t) * (t) * c + t * t * t * d;
-      for
+        Vector3 sigma=Vector3.zero;
+        for (int i = 0; i <= n; i++)
+        {
+            Debug.Log(i);
+            sigma += CoefBinomial(n, i) * Mathf.Pow(1 - t, n - i) * Mathf.Pow(t, i) * bezierPoint[i];
+        }
+        return sigma;
 
-        return value;
     }
 }
