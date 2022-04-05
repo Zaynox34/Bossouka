@@ -9,8 +9,13 @@ public class NeckManager : MonoBehaviour
     [SerializeField] Transform origin;
     [Header("GameObject")]
     [SerializeField] GameObject headController;
+    [SerializeField] GameObject head;
     [SerializeField] GameObject point1;
     [SerializeField] GameObject point2;
+    [SerializeField] GameObject breath;
+    [SerializeField] Transform pivot1;
+    [SerializeField] Transform pivot2;
+    //[SerializeField] Transform pivot3;
     [Header("List")]
     [SerializeField] List<Vector3> bezierPoint;
     [SerializeField] List<Vector3> bezierCurvePoint;
@@ -24,7 +29,9 @@ public class NeckManager : MonoBehaviour
     [SerializeField] float amplitudeOscilation;
     [SerializeField] float offsetX;
     [SerializeField] float offsetY;
-    
+
+    public bool freeze;
+
     bool test;
     void Start()
     {
@@ -43,6 +50,8 @@ public class NeckManager : MonoBehaviour
         {
             bezierCurvePoint.Add(new Vector3(0, 0, 0));
         }
+        freeze = false;
+        pivot2.localPosition = new Vector3(0, 4 * offset, 0);
     }
 
     // Update is called once per frame
@@ -51,18 +60,35 @@ public class NeckManager : MonoBehaviour
         PlacerLesPoint();
         TracerBezierCourbe();
         Ondule();
+        DeepThroat();
     }
     public void PlacerLesPoint()
     {
-        point1.transform.position = origin.position + new Vector3(0, 3*offset,0);
+        Vector3 DirectionBezier1 = new Vector3(0, 3 * offset, 0);
+        Vector3 DirectionBezier2 = new Vector3(0, 4 * offset, 0);
+        pivot1.localRotation=Quaternion.Euler(new Vector3(0,0,headController.transform.eulerAngles.z));
+        pivot2.localPosition = new Vector3(0, 4 * offset, 0);
+        if(headController.transform.eulerAngles.z>0)
+        {
+            point1.transform.position = origin.position + DirectionBezier1;
+            point1.transform.position += new Vector3(0, headController.transform.eulerAngles.z, 0);
+        }
+        else
+        {
+            point1.transform.position = origin.position + DirectionBezier1;
+        }
         bezierPoint[3] = headController.transform.position;
-        Vector3 tmp = (headController.transform.position - origin.position).normalized;
-        tmp.y = 0;
-        tmp*=offset;
-        point2.transform.position = headController.transform.position + new Vector3(0, 4 * offset, 0);
-
+        //point2.transform.position = headController.transform.position + DirectionBezier2;
+        /*if (point1.transform.position.y<offset)
+        {
+            point1.transform.position= new Vector3(point1.transform.position.x,2*offset, point1.transform.position.z);
+        }
+        if (point2.transform.position.y < 0)
+        {
+            //point2.transform.position = new Vector3(point2.transform.position.x, 0, point2.transform.position.z);
+        }       */
         bezierPoint[1] = point1.transform.position;
-        bezierPoint[2] = point2.transform.position;
+        bezierPoint[2] = pivot2.position;
     }
     public void TracerBezierCourbe()
     {
@@ -120,5 +146,18 @@ public class NeckManager : MonoBehaviour
         }
         return sigma;
 
+    }
+    public void DeepThroat()
+    {
+        if (!freeze)
+        {
+            head.transform.localScale =Vector3.one*2;
+            breath.transform.position = GetComponent<LineRenderer>().GetPosition((int)(head.GetComponent<HeadBossManager>().counterCadance / head.GetComponent<HeadBossManager>().cadance * subdivision));
+        }
+        else
+        {
+            head.transform.localScale += new Vector3(2,2,2)*Time.deltaTime;
+        }
+                
     }
 }

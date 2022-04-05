@@ -5,14 +5,14 @@ using UnityEngine;
 public class HeadBossManager : MonoBehaviour
 {
     [SerializeField] private GameObject projectileGroup;
-    [SerializeField] private float cadance;
+    public float cadance;
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject prefabProjectile;
     public List<int> rythmContainer;
     public List<float> rythmTiming;
     [SerializeField] private int koeCounter;
     [SerializeField] private float koeTimer;
-    [SerializeField] private float counterCadance;
+    public float counterCadance;
     [SerializeField] GameObject neck;
     [SerializeField] GameObject headController;
     // Start is called before the first frame update
@@ -41,6 +41,8 @@ public class HeadBossManager : MonoBehaviour
     }
     public void Fire()
     {
+        Debug.Log("aa");
+        neck.GetComponent<NeckManager>().freeze = false;
         GameObject tmp = Instantiate(prefabProjectile, transform.position, Quaternion.identity);
         tmp.transform.parent = projectileGroup.transform;
         tmp.GetComponent<ProjectileManager>().target = player.transform;
@@ -57,6 +59,7 @@ public class HeadBossManager : MonoBehaviour
         }
         if (koeCounter>=0 && koeCounter<rythmContainer.Count)
         {
+            neck.GetComponent<NeckManager>().freeze = true;
             if(koeTimer>=rythmTiming[koeCounter])
             {
                 player.GetComponent<PlayerController>().PlaySound(rythmContainer[koeCounter]);
@@ -66,7 +69,6 @@ public class HeadBossManager : MonoBehaviour
         }
         if(koeCounter >= rythmContainer.Count)
         {
-            
             Fire();
             koeCounter = -1;
             koeTimer = 0;
