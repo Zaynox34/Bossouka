@@ -52,6 +52,7 @@ public class NeckManager : MonoBehaviour
         }
         freeze = false;
         pivot2.localPosition = new Vector3(0, 4 * offset, 0);
+        //point1.transform.position = origin.position + new Vector3(0, 3 * offset, 0);
     }
 
     // Update is called once per frame
@@ -64,12 +65,14 @@ public class NeckManager : MonoBehaviour
     }
     public void PlacerLesPoint()
     {
+
         Vector3 DirectionBezier1 = new Vector3(0, 3 * offset, 0);
         Vector3 DirectionBezier2 = new Vector3(0, 4 * offset, 0);
         pivot1.localRotation=Quaternion.Euler(new Vector3(0,0,headController.transform.eulerAngles.z));
         pivot2.localPosition = new Vector3(0, 4 * offset, 0);
-        if(headController.transform.eulerAngles.z>0)
+        if((headController.transform.eulerAngles.z<360) && (headController.transform.eulerAngles.z > 180))
         {
+            Debug.Log(headController.transform.eulerAngles.z);
             point1.transform.position = origin.position + DirectionBezier1;
             point1.transform.position += new Vector3(0, headController.transform.eulerAngles.z, 0);
         }
