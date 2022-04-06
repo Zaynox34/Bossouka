@@ -15,9 +15,12 @@ public class HeadBossManager : MonoBehaviour
     public float counterCadance;
     [SerializeField] GameObject neck;
     [SerializeField] GameObject headController;
+    [SerializeField] GameObject boss;
+    public bool hatsudou;
     // Start is called before the first frame update
     void Start()
     {
+        cadance = 0;
         counterCadance = 0f;
         koeTimer = 0f;
         koeCounter = -1;
@@ -30,12 +33,17 @@ public class HeadBossManager : MonoBehaviour
         {
             cadance = tmp;
         }
+        hatsudou = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Hibike();
+        cadance = boss.GetComponent<BossManger>().bpm;
+        if (hatsudou)
+        {
+            Hibike();
+        }
         transform.position=neck.GetComponent<LineRenderer>().GetPosition(neck.GetComponent<LineRenderer>().positionCount-1);
         transform.rotation = headController.transform.rotation;
     }
@@ -47,6 +55,7 @@ public class HeadBossManager : MonoBehaviour
         tmp.transform.parent = projectileGroup.transform;
         tmp.GetComponent<ProjectileManager>().target = player.transform;
         tmp.GetComponent<ProjectileManager>().father = this.gameObject;
+        hatsudou = false;
 
     }
     public void Hibike()

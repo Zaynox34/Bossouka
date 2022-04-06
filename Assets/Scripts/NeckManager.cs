@@ -155,7 +155,12 @@ public class NeckManager : MonoBehaviour
         if (!freeze)
         {
             head.transform.localScale =Vector3.one*2;
-            breath.transform.position = GetComponent<LineRenderer>().GetPosition((int)(head.GetComponent<HeadBossManager>().counterCadance / head.GetComponent<HeadBossManager>().cadance * subdivision));
+            int tmp = (int)(head.GetComponent<HeadBossManager>().counterCadance / head.GetComponent<HeadBossManager>().cadance * subdivision);
+            if(tmp>subdivision)
+            {
+                tmp = subdivision;
+            }
+            breath.transform.position = GetComponent<LineRenderer>().GetPosition(tmp);
         }
         else
         {
