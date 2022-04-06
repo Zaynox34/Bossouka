@@ -72,9 +72,9 @@ public class NeckManager : MonoBehaviour
         pivot2.localPosition = new Vector3(0, 4 * offset, 0);
         if((headController.transform.eulerAngles.z<360) && (headController.transform.eulerAngles.z > 180))
         {
-            Debug.Log(headController.transform.eulerAngles.z);
+           
             point1.transform.position = origin.position + DirectionBezier1;
-            point1.transform.position += new Vector3(0, headController.transform.eulerAngles.z, 0);
+            //point1.transform.position += new Vector3(headController.transform.eulerAngles.x, headController.transform.eulerAngles.z, headController.transform.eulerAngles.y);
         }
         else
         {
