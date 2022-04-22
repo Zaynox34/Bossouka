@@ -50,7 +50,7 @@ public class NeckManager : MonoBehaviour
         {
             bezierCurvePoint.Add(new Vector3(0, 0, 0));
         }
-        freeze = false;
+        freeze = true;
         pivot2.localPosition = new Vector3(0, 4 * offset, 0);
         //point1.transform.position = origin.position + new Vector3(0, 3 * offset, 0);
     }
@@ -160,12 +160,8 @@ public class NeckManager : MonoBehaviour
             {
                 tmp = subdivision;
             }
+            Debug.Log(tmp);
             breath.transform.position = GetComponent<LineRenderer>().GetPosition(tmp);
-        }
-        else
-        {
-            head.transform.localScale += new Vector3(2,2,2)*Time.deltaTime;
-        }
-                
+        }                
     }
 }

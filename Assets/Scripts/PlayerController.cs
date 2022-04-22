@@ -136,6 +136,7 @@ public class PlayerController : MonoBehaviour
                 }
             }
             target = projectileTargetGroup.transform.GetChild(targeterIndex).GetComponent<ProjectileManager>().father;
+            maxrythm = target.GetComponent<HeadBossManager>().rythmContainer.Count;
             Checker();
         }
     }
@@ -144,6 +145,7 @@ public class PlayerController : MonoBehaviour
        
         if (numberofrythm < target.GetComponent<HeadBossManager>().rythmContainer.Count)
         {
+            
             if (timeInput > target.GetComponent<HeadBossManager>().rythmTiming[numberofrythm] + rythmOffsetError)
             {
                 Debug.Log("trop lent");
@@ -163,6 +165,7 @@ public class PlayerController : MonoBehaviour
                     (playerControl.BaseControl.Gatotsu.triggered)
                     )
                 {
+                    
                     if (numberofrythm == 0)
                     {
                         startTimeInput = true;
@@ -182,6 +185,7 @@ public class PlayerController : MonoBehaviour
                         )
                        )
                     {
+                        
                         rythmTimming.Add(timeInput);
                         rythmContainer.Add(target.GetComponent<HeadBossManager>().rythmContainer[numberofrythm]);
                         if (numberofrythm == maxrythm - 1)

@@ -637,6 +637,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 106341721}
+  - component: {fileID: 106341722}
   m_Layer: 0
   m_Name: Monster7
   m_TagString: Untagged
@@ -661,6 +662,19 @@ Transform:
   m_Father: {fileID: 1493450701}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &106341722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 106341720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f06a3a6130dad0b48897e9163fcb9426, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 40
 --- !u!1 &111755558
 GameObject:
   m_ObjectHideFlags: 0
@@ -1031,11 +1045,9 @@ MonoBehaviour:
   cadance: 10
   player: {fileID: 1491434289}
   prefabProjectile: {fileID: 984199585054130908, guid: 8ffe17e31b56cba4ebfe4e637fc53253, type: 3}
-  rythmContainer: 020000000600000002000000
+  rythmContainer: 05000000
   rythmTiming:
   - 0
-  - 0.1
-  - 0.1
   koeCounter: 0
   koeTimer: 0
   counterCadance: 0
@@ -1373,10 +1385,9 @@ MonoBehaviour:
   cadance: 10
   player: {fileID: 1491434289}
   prefabProjectile: {fileID: 984199585054130908, guid: 8ffe17e31b56cba4ebfe4e637fc53253, type: 3}
-  rythmContainer: 020000000600000002000000
+  rythmContainer: 0600000008000000
   rythmTiming:
   - 0
-  - 0.1
   - 0.2
   koeCounter: 0
   koeTimer: 0
@@ -1825,6 +1836,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 341292095}
+  - component: {fileID: 341292096}
   m_Layer: 0
   m_Name: Monster8
   m_TagString: Untagged
@@ -1849,6 +1861,19 @@ Transform:
   m_Father: {fileID: 1493450701}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &341292096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 341292094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f06a3a6130dad0b48897e9163fcb9426, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 40
 --- !u!1 &367642249
 GameObject:
   m_ObjectHideFlags: 0
@@ -2040,7 +2065,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 516276679}
-  m_LocalRotation: {x: -0.0000000018149844, y: 0.99827725, z: 0.058673453, w: 0.000000030880365}
+  m_LocalRotation: {x: -0.0000000017605394, y: 0.99827725, z: 0.058673453, w: 0.00000002995403}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2278,8 +2303,8 @@ MonoBehaviour:
   rythmContainer: 020000000600000002000000
   rythmTiming:
   - 0
-  - 0.1
   - 0.2
+  - 0.4
   koeCounter: 0
   koeTimer: 0
   counterCadance: 0
@@ -3591,6 +3616,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 906638255}
+  - component: {fileID: 906638256}
   m_Layer: 0
   m_Name: Monster6
   m_TagString: Untagged
@@ -3615,6 +3641,19 @@ Transform:
   m_Father: {fileID: 1493450701}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &906638256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906638254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f06a3a6130dad0b48897e9163fcb9426, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 40
 --- !u!1 &909356009
 GameObject:
   m_ObjectHideFlags: 0
@@ -3842,11 +3881,11 @@ MonoBehaviour:
   cadance: 10
   player: {fileID: 1491434289}
   prefabProjectile: {fileID: 984199585054130908, guid: 8ffe17e31b56cba4ebfe4e637fc53253, type: 3}
-  rythmContainer: 020000000600000002000000
+  rythmContainer: 080000000500000008000000
   rythmTiming:
   - 0
-  - 0.1
   - 0.2
+  - 0.4
   koeCounter: 0
   koeTimer: 0
   counterCadance: 0
@@ -3940,6 +3979,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 978631334}
+  - component: {fileID: 978631335}
   m_Layer: 0
   m_Name: Monster3
   m_TagString: Untagged
@@ -3964,6 +4004,19 @@ Transform:
   m_Father: {fileID: 1493450701}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &978631335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 978631333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f06a3a6130dad0b48897e9163fcb9426, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 40
 --- !u!1 &997697695
 GameObject:
   m_ObjectHideFlags: 0
@@ -4000,11 +4053,10 @@ MonoBehaviour:
   cadance: 10
   player: {fileID: 1491434289}
   prefabProjectile: {fileID: 984199585054130908, guid: 8ffe17e31b56cba4ebfe4e637fc53253, type: 3}
-  rythmContainer: 020000000600000002000000
+  rythmContainer: 0400000006000000
   rythmTiming:
   - 0
-  - 0.1
-  - 0.2
+  - 0.25
   koeCounter: 0
   koeTimer: 0
   counterCadance: 0
@@ -5198,7 +5250,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1194936168}
-  m_LocalRotation: {x: -3.9377152e-10, y: 0.9991774, z: 0.0405536, w: 0.00000001773253}
+  m_LocalRotation: {x: -4.005573e-10, y: 0.9991774, z: 0.040553596, w: 0.000000017565206}
   m_LocalPosition: {x: -0.0000018454949, y: 1.75, z: 67.22}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -5308,11 +5360,9 @@ MonoBehaviour:
   cadance: 10
   player: {fileID: 1491434289}
   prefabProjectile: {fileID: 984199585054130908, guid: 8ffe17e31b56cba4ebfe4e637fc53253, type: 3}
-  rythmContainer: 020000000600000002000000
+  rythmContainer: 04000000
   rythmTiming:
   - 0
-  - 0.1
-  - 0.2
   koeCounter: 0
   koeTimer: 0
   counterCadance: 0
@@ -7153,6 +7203,15 @@ MonoBehaviour:
   - {fileID: 924689898}
   - {fileID: 2052634067}
   - {fileID: 1580606956}
+  monsters:
+  - {fileID: 1814397673}
+  - {fileID: 1856275142}
+  - {fileID: 978631333}
+  - {fileID: 2134689259}
+  - {fileID: 1860752665}
+  - {fileID: 906638254}
+  - {fileID: 106341720}
+  - {fileID: 341292094}
   heads:
   - {fileID: 1533931141}
   - {fileID: 1969234998}
@@ -7171,9 +7230,13 @@ MonoBehaviour:
   - {fileID: 1051465445}
   - {fileID: 651243348}
   - {fileID: 301497578}
+  projectileGroup: {fileID: 1672265931}
+  projectileTargetGroup: {fileID: 271941817}
+  player: {fileID: 1491434289}
   whichtHead: 0
   bpm: 45
   bpmCounter: 0
+  hadsudoChecker: 0
 --- !u!1 &1533238870
 GameObject:
   m_ObjectHideFlags: 0
@@ -8252,6 +8315,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1814397674}
+  - component: {fileID: 1814397675}
   m_Layer: 0
   m_Name: Monster1
   m_TagString: Untagged
@@ -8276,6 +8340,19 @@ Transform:
   m_Father: {fileID: 1493450701}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1814397675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1814397673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f06a3a6130dad0b48897e9163fcb9426, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 40
 --- !u!1 &1850375083
 GameObject:
   m_ObjectHideFlags: 0
@@ -8381,6 +8458,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1856275143}
+  - component: {fileID: 1856275144}
   m_Layer: 0
   m_Name: Monster2
   m_TagString: Untagged
@@ -8405,6 +8483,19 @@ Transform:
   m_Father: {fileID: 1493450701}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1856275144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1856275142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f06a3a6130dad0b48897e9163fcb9426, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 40
 --- !u!1 &1860752665
 GameObject:
   m_ObjectHideFlags: 0
@@ -8414,6 +8505,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1860752666}
+  - component: {fileID: 1860752667}
   m_Layer: 0
   m_Name: Monster5
   m_TagString: Untagged
@@ -8438,6 +8530,19 @@ Transform:
   m_Father: {fileID: 1493450701}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1860752667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1860752665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f06a3a6130dad0b48897e9163fcb9426, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 40
 --- !u!1 &1867093478
 GameObject:
   m_ObjectHideFlags: 0
@@ -8694,7 +8799,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1894049085}
-  m_LocalRotation: {x: -5.5669036e-10, y: 0.9991774, z: 0.040553592, w: 0.000000013715983}
+  m_LocalRotation: {x: -5.566903e-10, y: 0.9991774, z: 0.04055359, w: 0.000000013715983}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -9152,11 +9257,9 @@ MonoBehaviour:
   cadance: 10
   player: {fileID: 1491434289}
   prefabProjectile: {fileID: 984199585054130908, guid: 8ffe17e31b56cba4ebfe4e637fc53253, type: 3}
-  rythmContainer: 020000000600000002000000
+  rythmContainer: 06000000
   rythmTiming:
   - 0
-  - 0.1
-  - 0.2
   koeCounter: 0
   koeTimer: 0
   counterCadance: 0
@@ -10297,6 +10400,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2134689260}
+  - component: {fileID: 2134689261}
   m_Layer: 0
   m_Name: Monster4
   m_TagString: Untagged
@@ -10321,6 +10425,19 @@ Transform:
   m_Father: {fileID: 1493450701}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2134689261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2134689259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f06a3a6130dad0b48897e9163fcb9426, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 40
 --- !u!1 &2145274464
 GameObject:
   m_ObjectHideFlags: 0

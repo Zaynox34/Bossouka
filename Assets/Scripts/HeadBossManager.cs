@@ -68,6 +68,7 @@ public class HeadBossManager : MonoBehaviour
         }
         if (koeCounter>=0 && koeCounter<rythmContainer.Count)
         {
+            transform.localScale += new Vector3(2, 2, 2) * Time.deltaTime;
             neck.GetComponent<NeckManager>().freeze = true;
             if(koeTimer>=rythmTiming[koeCounter])
             {
